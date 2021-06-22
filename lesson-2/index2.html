@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Task 2</title>
+</head>
+<body>
+<script>
+	"use strict";
+	/*
+	Чему будут равны переменные x и a в примере ниже?
+	Написать почему так произошло (описать последовательность действий).
+	*/
+
+	/*
+	Переменная a = 4
+	Переменная x = 5
+	Перемменой а присваивается значение 2
+	В следующем шаге обработка операторов происходит справа на лево, но внесенные в скобку имеют приоритет обработки.
+	Т.е сначала переменная a увеличивается в 2 раза, а уже потом происходит сложение с 1.
+	*/
+	let a = 2;
+	let x = 1 + (a *= 2);
+	alert(a);
+	alert(x);
+</script>
+</body>
+</html>

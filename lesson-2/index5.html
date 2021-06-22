@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Task 4</title>
+</head>
+<body>
+<script>
+	"use strict";
+	/*
+	Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg1, operation),
+	где arg1, arg2 – значения аргументов, operation – строка с названием операции.
+	В зависимости от переданного значения операции (использовать switch) выполнить одну из
+	арифметических операций(использовать функции из задания 4) и вернуть полученное значение.
+	*/
+
+
+	//сложение
+	function addition(a, b) {
+		return a + b;
+	}
+
+	//вычетание
+	function subtracting(a, b) {
+		return a - b;
+	}
+
+	//умножение
+	function multiplication(a, b) {
+		return a * b;
+	}
+
+	//деление
+	function division(a, b) {
+		return a - b;
+	}
+
+	function mathOperation(arg1, arg2, operation) {
+		switch(operation) {
+			case "addition":
+				return addition(arg1, arg2)
+				break;
+			case "subtracting":
+				return subtracting(arg1, arg2)
+				break;
+			case "multiplication":
+				return multiplication(arg1, arg2)
+				break;
+			case "division":
+				return division(arg1, arg2)
+				break;
+			default:
+				alert("я такого дня не умею");
+				break;
+		}
+	}
+
+	alert(mathOperation(42, 13, "multiplication"));
+
+</script>
+</body>
+</html>
