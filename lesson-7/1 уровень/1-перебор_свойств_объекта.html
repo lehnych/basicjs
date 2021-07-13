@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+	<!--
+	Задание.
+	Используя цикл for in переберите объект products, ведите в консоль
+	имя свойства, значение свойства.
+	-->
+	
+    <script>
+		'use strict';
+        const products = {
+            one: "один",
+            two: "два",
+            three: "три",
+        };
+		
+		for (const [key, value] of Object.entries(products)) {
+			console.log(`${key}: ${value}`);
+		}
+    </script>
+</body>
+</html>
