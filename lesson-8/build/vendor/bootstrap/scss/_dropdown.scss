@@ -1,0 +1,106 @@
+// The dropdown wrapper (`<div>`)
+.dropup,
+.dropend,
+.dropdown,
+.dropstart {
+	position: relative;
+}
+
+.dropdown-toggle {
+	white-space: nowrap;
+}
+
+// The dropdown menu
+.dropdown-menu {
+	position: absolute;
+	z-index: 1000;
+	display: none;
+	
+	
+	&[data-bs-popper] {
+		top: 100%;
+		left: 0;
+		margin-top: $dropdown-spacer;
+	}
+}
+
+// scss-docs-start responsive-breakpoints
+// We deliberately hardcode the `bs-` prefix because we check
+// this custom property in JS to determine Popper's positioning
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+		
+		.dropdown-menu#{$infix}-start {
+			--bs-position: start;
+			
+			&[data-bs-popper] {
+				right: auto;
+				left: 0;
+			}
+		}
+		
+		.dropdown-menu#{$infix}-end {
+			--bs-position: end;
+			
+			&[data-bs-popper] {
+				right: 0;
+				left: auto;
+			}
+		}
+	}
+}
+// scss-docs-end responsive-breakpoints
+
+// Allow for dropdowns to go bottom up (aka, dropup-menu)
+// Just add .dropup after the standard .dropdown class and you're set.
+.dropup {
+	
+	.dropdown-menu[data-bs-popper] {
+		top: auto;
+		bottom: 100%;
+		margin-top: 0;
+		margin-bottom: $dropdown-spacer;
+	}
+}
+
+.dropend {
+	
+	.dropdown-menu[data-bs-popper] {
+		top: 0;
+		right: auto;
+		left: 100%;
+		margin-top: 0;
+		margin-left: $dropdown-spacer;
+	}
+	
+	.dropdown-toggle {
+		
+		&::after {
+			vertical-align: 0;
+		}
+	}
+}
+
+.dropstart {
+	
+	.dropdown-menu[data-bs-popper] {
+		top: 0;
+		right: 100%;
+		left: auto;
+		margin-top: 0;
+		margin-right: $dropdown-spacer;
+	}
+	
+	.dropdown-toggle {
+		
+		&::before {
+			vertical-align: 0;
+		}
+	}
+}
+
+.dropdown-menu.show {
+	display: block;
+}

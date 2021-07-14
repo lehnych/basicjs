@@ -1,0 +1,90 @@
+extends layout/base
+
+block variables
+	- var pageMetaTitle = 'Product'
+	- var pageTitle = 'New Arrivals'
+	- var catalogType = 'Women'
+	- var sectionBreadcrumb = true
+	- var selfBreadcrumb = true
+	- var sectionProductSlider = true
+	- var sliderPagination = false
+
+block productslider
+	section.poduct-slider.swiper-box(class=sliderPagination ? '' : 'no--pagination')
+		.swiper-container.mySwiper
+			.swiper-wrapper
+				.swiper-slide
+					.container
+						picture
+							source(media='(min-width: 1200px)' srcset='img/product/de/product-01.jpg')
+							source(media='(min-width: 1024px)' srcset='img/product/tl/product-01.jpg')
+							source(media='(min-width: 768px)' srcset='img/product/tp/product-01.jpg')
+							source(media='(min-width: 568px)' srcset='img/product/ml/product-01.jpg')
+							img(src='img/product/product-01.jpg' alt='Product')
+				.swiper-slide
+					.container
+						picture
+							source(media='(min-width: 1200px)' srcset='img/product/de/product-02.jpg')
+							source(media='(min-width: 1024px)' srcset='img/product/tl/product-02.jpg')
+							source(media='(min-width: 768px)' srcset='img/product/tp/product-02.jpg')
+							source(media='(min-width: 568px)' srcset='img/product/ml/product-02.jpg')
+							img(src='img/product/product-02.jpg' alt='Product')
+			.swiper-button-next
+				i.icon__angle-right
+			.swiper-button-prev
+				i.icon__angle-left
+			.swiper-pagination
+
+block maincontent
+	section.product-details
+		.product-details__wrapper
+			.product-details__name
+				span
+					|Women Collection
+				|Moschino cheap and chic
+			.product-details__description
+				p
+					|Compellingly actualize fully researched processes before proactive outsourcing. Progressively syndicate collaborative architectures before cutting-edge services. Completely visualize parallel core competencies rather than exceptional portals.</p>
+			.product-details__price
+				span.price--discount
+					|$52.00
+			form(action='#' method='post')
+				.product-details__options
+					.product-options__item.dropdown
+						.dropdown__header.dropdown-toggle(data-bs-target='#product-option-color' data-bs-toggle='dropdown' aria-expanded='false')
+							span
+								|Choose Color
+							span
+								i.icon__angle-down
+						#product-option-color.dropdown__content.dropdown-menu
+							+inputCheckbox(true, 'Color 1', 'color1', 'color1', false, false, false, 'custom-element__input')
+							+inputCheckbox(true, 'Color 2', 'color1', 'color2', false, false, false, 'custom-element__input')
+							+inputCheckbox(true, 'Color 3', 'color1', 'color3', false, false, false, 'custom-element__input')
+							+inputCheckbox(true, 'Color 4', 'color4', 'color4', false, false, false, 'custom-element__input')
+
+					.product-options__item.dropdown
+						.dropdown__header.dropdown-toggle(data-bs-target='#product-option-size' data-bs-toggle='dropdown' aria-expanded='false')
+							span
+								| Choose Size
+							span
+								i.icon__angle-down
+						#product-option-size.dropdown__content.dropdown-menu
+							+inputCheckbox(true, 'Size XS', 'sizeXS', 'sizeXS', false, false, false, 'custom-element__input')
+							+inputCheckbox(true, 'Size S', 'sizeS', 'sizeS', false, false, false, 'custom-element__input')
+							+inputCheckbox(true, 'Size M', 'sizeM', 'sizeM', false, false, false, 'custom-element__input')
+							+inputCheckbox(true, 'Size M', 'sizeM', 'sizeM', false, false, false, 'custom-element__input')
+
+					.product-options__item.dropdown
+						.dropdown__header.dropdown-toggle(data-bs-target='#product-option-quantity' data-bs-toggle='dropdown' aria-expanded='false')
+							span
+								|Quantity
+							span
+								i.icon__angle-down
+						#product-option-quantity.dropdown__content.dropdown-menu
+							+input(true, 'number', 'Quantity', 'quantity', 'quantity', 'Quantity', '1', false, '1', '5', false, false, false, false, false, false, true, 'form-control', false, false)
+				+button('Add to Cart','submit', 'btn btn__primary--negative', true, 'icon__cart', 'left')
+	section.product-grid.mode--grid.row
+		.product-grid__wrapper
+			+productItem('Ellery X M\'O Capsule', 'product.html', 'img/product/product-m-03-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M\'O Capsule', 'product.html', 'img/product/product-m-04-thumb.jpg', 'Known for her sculptural takes on traditional tailoring.', '$52.00')
+			+productItem('Ellery X M\'O Capsule', 'product.html', 'img/product/product-w-06-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')

@@ -1,0 +1,70 @@
+ol,
+ul {
+	margin-bottom: $base-spacing-xs;
+	padding-left:0;
+	list-style: none;
+	list-style-position: outside;
+	
+	&:not(:last-child) {
+		margin-bottom: $base-spacing-xs;
+	}
+	
+	li:not(:last-of-type) {
+		margin-bottom: $base-spacing;
+	}
+	
+	&.check,
+	&.decimal,
+	&.disc,
+	&.lower-latin,
+	&.square {
+		padding-left: $base-spacing-xxs;
+		
+		li {
+			margin-left: $base-spacing;
+		}
+	}
+	
+	&.check {
+		padding-left: $base-spacing-xs;
+		
+		li {
+			@include position-relative;
+			
+			&:before {
+				left: -19.5px;
+				font-family: $gb-fontname !important;
+				content: $gb-check;
+				position: absolute;
+			}
+		}
+	}
+	
+	&.decimal {
+		
+		li {
+			list-style: decimal !important;
+		}
+	}
+	
+	&.disc {
+		
+		li {
+			list-style: disc !important;
+		}
+	}
+	
+	&.lower-latin {
+		
+		li {
+			list-style: lower-latin !important;
+		}
+	}
+	
+	&.square {
+		
+		li {
+			list-style: square !important;
+		}
+	}
+}

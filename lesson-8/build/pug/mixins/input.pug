@@ -1,0 +1,95 @@
+mixin input(inputCustom, inputType, inputLabel, inputId, inputName, inputPlaceholder, inputValue, inputPattern, inputMin, inputMax, inputMinLength, inputMaxLength, inputAutocomplete, inputAutofocus, inputDisabled, inputReadonly, inputRequired, inputClass, inputCombo, inputComboButtonValues)
+
+	- var formGroupClass = 'form-group'
+
+	if inputCombo
+		- var groupCombo = 'group--combo'
+		- var inputComboButtonValues = inputComboButtonValues
+		- var buttonLabel = inputComboButtonValues[0]
+		- var buttonType = inputComboButtonValues[1]
+		- var buttonClass = inputComboButtonValues[2]
+		- var buttonIcon = inputComboButtonValues[3]
+		- var buttonIconVariant = inputComboButtonValues[4]
+		- var buttonIconPosition = inputComboButtonValues[5]
+
+	if inputCombo && inputCustom
+		- var formGroupClass = [formGroupClass, groupCombo]
+
+	div(class=formGroupClass)
+		if inputCustom
+			.form-label-group
+				input(
+					type=inputType
+					id=inputId
+					name=inputName
+					placeholder=inputPlaceholder
+					value=inputValue
+					pattern=inputPattern
+					min=inputMin
+					max=inputMax
+					minlength=inputMinLength
+					maxlength=inputMaxLength
+					autocomplete=inputAutocomplete
+					autofocus=inputAutofocus
+					disabled=inputDisabled
+					readonly=inputReadonly
+					required=inputRequired
+					class=inputClass
+				)
+				label(for=inputId)= inputLabel
+			if inputCombo
+				+button(buttonLabel, buttonType, buttonClass, buttonIcon, buttonIconVariant, buttonIconPosition)
+		else
+			if inputType == 'search' && !inputCombo
+				label(for=inputId)= inputLabel
+				.search-field
+					input(
+						type=inputType
+						id=inputId
+						name=inputName
+						placeholder=inputPlaceholder
+						class=inputClass
+					)
+					+button('', 'submit', 'search-button', true , 'icon__search', 'left')
+			else
+				label(for=inputId)= inputLabel
+				if inputCombo
+					.combo-field
+						input(
+							type=inputType
+							id=inputId
+							name=inputName
+							placeholder=inputPlaceholder
+							value=inputValue
+							pattern=inputPattern
+							min=inputMin
+							max=inputMax
+							minlength=inputMinLength
+							maxlength=inputMaxLength
+							autocomplete=inputAutocomplete
+							autofocus=inputAutofocus
+							disabled=inputDisabled
+							readonly=inputReadonly
+							required=inputRequired
+							class=inputClass
+						)
+						+button(buttonLabel, buttonType, buttonClass, buttonIcon, buttonIconVariant, buttonIconPosition)
+				else
+					input(
+						type=inputType
+						id=inputId
+						name=inputName
+						placeholder=inputPlaceholder
+						value=inputValue
+						pattern=inputPattern
+						min=inputMin
+						max=inputMax
+						minlength=inputMinLength
+						maxlength=inputMaxLength
+						autocomplete=inputAutocomplete
+						autofocus=inputAutofocus
+						disabled=inputDisabled
+						readonly=inputReadonly
+						required=inputRequired
+						class=inputClass
+					)

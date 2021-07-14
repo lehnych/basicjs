@@ -1,0 +1,25 @@
+mixin inputCheckbox(inputCustom, inputLabel, inputId, inputName, inputValue, inputChecked, inputRequired, inputClass)
+	.form-group
+		if inputCustom
+			.custom-element__checkbox
+				input(
+					type='checkbox'
+					id=inputId
+					name=inputName
+					value=inputValue
+					checked=inputChecked
+					required=inputRequired
+					class=inputClass
+				)
+				label.custom-element__label(for=inputId)=inputLabel
+		else
+			input(
+				type='checkbox'
+				id=inputId
+				name=inputName
+				value=inputValue
+				checked=inputChecked
+				required=inputRequired
+				class=inputClass
+			)
+			label(for=id)= inputLabel

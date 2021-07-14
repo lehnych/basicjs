@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Catalog</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.min.css">
+</head>
+<body>
+  <div class="page__wrapper">
+    <header>
+      <div class="container">
+        <div class="header__wrapper">
+          <div class="header__col">
+            <div class="logo"><a href="index.html" title="Shop"><img src="img/logo.png" alt="Shop"></a></div>
+            <div class="search"><a href="#" title="Search"><i class="icon__search"></i></a></div>
+          </div>
+          <div class="header__col">
+            <div class="menu"><a href="#" title="Menu"><i class="icon__bars" id="mobile-menu-icon"></i></a></div>
+            <div class="user"><a href="#" title="My Account"><i class="icon__user"></i></a></div>
+            <div class="basket"><a href="#" title="My Basket">
+                <div class="basket__count">0</div><i class="icon__cart"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="breadcrumb">
+        <div class="breadcrumb__wrapper container">
+          <h1>New Arrivals</h1>
+          <ul>
+            <li><a href="index.html" title="Home">Home</a></li>
+            <li><a href="#" title="Women">Women</a></li>
+            <li><a class="is--active" href="#" title="New Arrivals">New Arrivals</a></li>
+          </ul>
+        </div>
+      </section>
+      <div class="main__wrapper container">
+        <section class="categorie-options row">
+          <div class="filter-primary">
+            <div class="filter-primary__item">
+              <div class="filter-primary__item__wrapper">
+                <div class="filter-primary__item__header"><span>Filter</span><span><i class="icon__filter"></i></span></div>
+                <div class="filter-primary__item__content">
+                  <details>
+                    <summary>Category</summary>
+                    <ul>
+                      <li><a href="#" title="#{val}">Accessories</a></li>
+                      <li><a href="#" title="#{val}">Bags</a></li>
+                      <li><a href="#" title="#{val}">Denim</a></li>
+                      <li><a href="#" title="#{val}">Hoodies &amp; Sweatshirts</a></li>
+                      <li><a href="#" title="#{val}">Jackets &amp; Coats</a></li>
+                      <li><a href="#" title="#{val}">Polos</a></li>
+                      <li><a href="#" title="#{val}">Shirts</a></li>
+                      <li><a href="#" title="#{val}">Shoes</a></li>
+                      <li><a href="#" title="#{val}">Sweaters &amp; Knits</a></li>
+                      <li><a href="#" title="#{val}">T-Shirts</a></li>
+                      <li><a href="#" title="#{val}">Tanks</a></li>
+                    </ul>
+                  </details>
+                  <details>
+                    <summary>Brand</summary>
+                    <ul>
+                      <li><a href="#" title="#{val}">Brand 1</a></li>
+                      <li><a href="#" title="#{val}">Brand 2</a></li>
+                      <li><a href="#" title="#{val}">Brand 3</a></li>
+                      <li><a href="#" title="#{val}">Brand 4</a></li>
+                    </ul>
+                  </details>
+                  <details>
+                    <summary>Designer</summary>
+                    <ul>
+                      <li><a href="#" title="#{val}">Designer 1</a></li>
+                      <li><a href="#" title="#{val}">Designer 2</a></li>
+                      <li><a href="#" title="#{val}">Designer 3</a></li>
+                      <li><a href="#" title="#{val}">Designer 4</a></li>
+                    </ul>
+                  </details>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="filter-secondary">
+            <div class="filter-secondary__item dropdown">
+              <div class="dropdown__header dropdown-toggle" data-bs-target="#filter-secondary-trends" data-bs-toggle="dropdown" aria-expanded="false"><span>Trending now</span><span><i class="icon__angle-down"></i></span></div>
+              <div class="dropdown__content dropdown-menu" id="filter-secondary-trends">
+                <div class="form-group">
+                  <div class="custom-element__checkbox">
+                    <input class="custom-element__input" type="checkbox" id="trend1" name="trend1"/>
+                    <label class="custom-element__label" for="trend1">Trend 1</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-element__checkbox">
+                    <input class="custom-element__input" type="checkbox" id="trend2" name="trend2"/>
+                    <label class="custom-element__label" for="trend2">Trend 2</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-element__checkbox">
+                    <input class="custom-element__input" type="checkbox" id="trend3" name="trend3"/>
+                    <label class="custom-element__label" for="trend3">Trend 3</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-element__checkbox">
+                    <input class="custom-element__input" type="checkbox" id="trend4" name="trend4"/>
+                    <label class="custom-element__label" for="trend4">Trend 4</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filter-secondary__item dropdown">
+              <div class="dropdown__header dropdown-toggle" data-bs-target="#filter-secondary-size" data-bs-toggle="dropdown" aria-expanded="false"><span>Size</span><span><i class="icon__angle-down"></i></span></div>
+              <div class="dropdown__content dropdown-menu" id="filter-secondary-size">
+                <div class="form-group">
+                  <div class="custom-element__checkbox">
+                    <input class="custom-element__input" type="checkbox" id="sizeXS" name="sizeXS"/>
+                    <label class="custom-element__label" for="sizeXS">XS</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-element__checkbox">
+                    <input class="custom-element__input" type="checkbox" id="sizeS" name="sizeS"/>
+                    <label class="custom-element__label" for="sizeS">S</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-element__checkbox">
+                    <input class="custom-element__input" type="checkbox" id="sizeM" name="sizeM"/>
+                    <label class="custom-element__label" for="sizeM">M</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="custom-element__checkbox">
+                    <input class="custom-element__input" type="checkbox" id="sizeL" name="sizeL"/>
+                    <label class="custom-element__label" for="sizeL">L</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="filter-secondary__item dropdown">
+              <div class="dropdown__header dropdown-toggle" data-bs-target="#filter-secondary-price" data-bs-toggle="dropdown" aria-expanded="false"><span>Price</span><span><i class="icon__angle-down"></i></span></div>
+              <div class="dropdown__content dropdown-menu" id="filter-secondary-price">content</div>
+            </div>
+          </div>
+        </section>
+        <section class="product-grid mode--grid row">
+          <div class="product-grid__wrapper">
+            <div class="product-item">
+              <div class="product-item__wrapper">
+                <div class="product-item__picture"><a href="product.html" title="Ellery X M'O Capsule"><span class="btn btn__ghost--negative btn--transparent"><i class="icon__cart"></i>Add to Cart</span></a>
+                  <picture><img class="img--fluid" src="img/product/product-m-01-thumb.jpg" alt="Ellery X M'O Capsule"/></picture>
+                </div>
+                <div class="product-item__body">
+                  <div class="product-item__decription">
+                    <h4><a href="product.html" title="Ellery X M'O Capsule">Ellery X M'O Capsule</a></h4>
+                    <p>Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
+                  </div>
+                  <div class="product-item__price"><span class="price--discount">$52.00</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-item__wrapper">
+                <div class="product-item__picture"><a href="product.html" title="Ellery X M'O Capsule"><span class="btn btn__ghost--negative btn--transparent"><i class="icon__cart"></i>Add to Cart</span></a>
+                  <picture><img class="img--fluid" src="img/product/product-m-02-thumb.jpg" alt="Ellery X M'O Capsule"/></picture>
+                </div>
+                <div class="product-item__body">
+                  <div class="product-item__decription">
+                    <h4><a href="product.html" title="Ellery X M'O Capsule">Ellery X M'O Capsule</a></h4>
+                    <p>Known for her sculptural takes on traditional tailoring.</p>
+                  </div>
+                  <div class="product-item__price"><span class="price--discount">$52.00</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-item__wrapper">
+                <div class="product-item__picture"><a href="product.html" title="Ellery X M'O Capsule"><span class="btn btn__ghost--negative btn--transparent"><i class="icon__cart"></i>Add to Cart</span></a>
+                  <picture><img class="img--fluid" src="img/product/product-m-03-thumb.jpg" alt="Ellery X M'O Capsule"/></picture>
+                </div>
+                <div class="product-item__body">
+                  <div class="product-item__decription">
+                    <h4><a href="product.html" title="Ellery X M'O Capsule">Ellery X M'O Capsule</a></h4>
+                    <p>Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
+                  </div>
+                  <div class="product-item__price"><span class="price--discount">$52.00</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-item__wrapper">
+                <div class="product-item__picture"><a href="product.html" title="Ellery X M'O Capsule"><span class="btn btn__ghost--negative btn--transparent"><i class="icon__cart"></i>Add to Cart</span></a>
+                  <picture><img class="img--fluid" src="img/product/product-m-04-thumb.jpg" alt="Ellery X M'O Capsule"/></picture>
+                </div>
+                <div class="product-item__body">
+                  <div class="product-item__decription">
+                    <h4><a href="product.html" title="Ellery X M'O Capsule">Ellery X M'O Capsule</a></h4>
+                    <p>Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
+                  </div>
+                  <div class="product-item__price"><span class="price--discount">$52.00</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-item__wrapper">
+                <div class="product-item__picture"><a href="product.html" title="Ellery X M'O Capsule"><span class="btn btn__ghost--negative btn--transparent"><i class="icon__cart"></i>Add to Cart</span></a>
+                  <picture><img class="img--fluid" src="img/product/product-m-05-thumb.jpg" alt="Ellery X M'O Capsule"/></picture>
+                </div>
+                <div class="product-item__body">
+                  <div class="product-item__decription">
+                    <h4><a href="product.html" title="Ellery X M'O Capsule">Ellery X M'O Capsule</a></h4>
+                    <p>Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
+                  </div>
+                  <div class="product-item__price"><span class="price--discount">$52.00</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-item__wrapper">
+                <div class="product-item__picture"><a href="product.html" title="Ellery X M'O Capsule"><span class="btn btn__ghost--negative btn--transparent"><i class="icon__cart"></i>Add to Cart</span></a>
+                  <picture><img class="img--fluid" src="img/product/product-m-06-thumb.jpg" alt="Ellery X M'O Capsule"/></picture>
+                </div>
+                <div class="product-item__body">
+                  <div class="product-item__decription">
+                    <h4><a href="product.html" title="Ellery X M'O Capsule">Ellery X M'O Capsule</a></h4>
+                    <p>Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
+                  </div>
+                  <div class="product-item__price"><span class="price--discount">$52.00</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-item__wrapper">
+                <div class="product-item__picture"><a href="product.html" title="Ellery X M'O Capsule"><span class="btn btn__ghost--negative btn--transparent"><i class="icon__cart"></i>Add to Cart</span></a>
+                  <picture><img class="img--fluid" src="img/product/product-m-07-thumb.jpg" alt="Ellery X M'O Capsule"/></picture>
+                </div>
+                <div class="product-item__body">
+                  <div class="product-item__decription">
+                    <h4><a href="product.html" title="Ellery X M'O Capsule">Ellery X M'O Capsule</a></h4>
+                    <p>Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
+                  </div>
+                  <div class="product-item__price"><span class="price--discount">$52.00</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-item__wrapper">
+                <div class="product-item__picture"><a href="product.html" title="Ellery X M'O Capsule"><span class="btn btn__ghost--negative btn--transparent"><i class="icon__cart"></i>Add to Cart</span></a>
+                  <picture><img class="img--fluid" src="img/product/product-m-08-thumb.jpg" alt="Ellery X M'O Capsule"/></picture>
+                </div>
+                <div class="product-item__body">
+                  <div class="product-item__decription">
+                    <h4><a href="product.html" title="Ellery X M'O Capsule">Ellery X M'O Capsule</a></h4>
+                    <p>Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
+                  </div>
+                  <div class="product-item__price"><span class="price--discount">$52.00</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="product-item">
+              <div class="product-item__wrapper">
+                <div class="product-item__picture"><a href="product.html" title="Ellery X M'O Capsule"><span class="btn btn__ghost--negative btn--transparent"><i class="icon__cart"></i>Add to Cart</span></a>
+                  <picture><img class="img--fluid" src="img/product/product-m-09-thumb.jpg" alt="Ellery X M'O Capsule"/></picture>
+                </div>
+                <div class="product-item__body">
+                  <div class="product-item__decription">
+                    <h4><a href="product.html" title="Ellery X M'O Capsule">Ellery X M'O Capsule</a></h4>
+                    <p>Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.</p>
+                  </div>
+                  <div class="product-item__price"><span class="price--discount">$52.00</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="pagination">
+          <div class="pagination__wrapper"><a href="#" title="back"><i class="icon__angle-left"></i></a><a class="is--active" href="#" title="1">1</a><a href="#" title="2">2</a><a href="#" title="3">3</a><a href="#" title="4">4</a><a href="#" title="5">5</a><a href="#" title="...">...</a><a href="#" title="20">20</a><a href="#" title="next"><i class="icon__angle-right"></i></a></div>
+        </section>
+      </div>
+    </main>
+    <footer>
+      <div class="footer__benefits">
+        <div class="container">
+          <div class="benefit-grid row">
+            <div class="benefit-grid__wrapper">
+              <div class="benefit-item">
+                <div class="benefit-item__wrapper">
+                  <div class="benefit-item__picture"><i class="icon__truck"></i></div>
+                  <div class="benefit-item__body">
+                    <div class="benefit-item__decription">
+                      <h4>Free Delivery</h4>
+                      <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <div class="benefit-item__wrapper">
+                  <div class="benefit-item__picture"><i class="icon__truck"></i></div>
+                  <div class="benefit-item__body">
+                    <div class="benefit-item__decription">
+                      <h4>Sales & discounts</h4>
+                      <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="benefit-item">
+                <div class="benefit-item__wrapper">
+                  <div class="benefit-item__picture"><i class="icon__truck"></i></div>
+                  <div class="benefit-item__body">
+                    <div class="benefit-item__decription">
+                      <h4>Quality assurance</h4>
+                      <p>Worldwide delivery on all. Authorit tively morph next-generation innov tion with extensive models.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__subscribe">
+        <div class="container">
+          <div class="footer__wrapper">
+            <div class="footer__col">
+              <div class="review"><img src="img/person.jpg" alt="Person">
+                <blockquote>"Vestibulum quis porttitor dui! Quisque viverra nunc mi, <i>a pulvinar purus condimentum</i></blockquote>
+              </div>
+            </div>
+            <div class="footer__col">
+              <div class="nl-subscribe">
+                <h4>Subscribe<span>For our Newsletter and promotion</span></h4>
+                <form action="" role="form" method="post">
+                  <div class="form-group group--combo">
+                    <div class="form-label-group">
+                      <input class="form-control" type="email" id="nlemail" name="nlemail" placeholder="Enter Your Email" required="required"/>
+                      <label for="nlemail">Enter Your Email</label>
+                    </div>
+                    <button type="submit">Subscribe
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer__copiright">
+        <div class="container">
+          <div class="footer__wrapper">
+            <div class="footer__col">
+              <p>© 2021  Brand  All Rights Reserved</p>
+            </div>
+            <div class="footer__col"><a class="icon" href="#" title="Facebook"><i class="icon__facebook"></i></a><a class="icon" href="#" title="Instagram"><i class="icon__instagram"></i></a><a class="icon" href="#" title="Pinterest"><i class="icon__pinterest"></i></a><a class="icon" href="#" title="Twitter"><i class="icon__twitter"></i></a></div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <nav id="mobile-menu-bar">
+      <div id="mobile-menu-header"><span>Menu</span><i class="icon__times"></i></div>
+      <ul id="mobile-menu">
+        <li class="level-1"><a href="#" title="#{val}">Men</a>
+          <ul>
+            <li class="level-2"><a href="#" title="#{val}">Accessories</a></li>
+            <li class="level-2"><a href="#" title="#{val}">Bags</a></li>
+            <li class="level-2"><a href="#" title="#{val}">Denim</a></li>
+            <li class="level-2"><a href="#" title="#{val}">T-Shirts</a></li>
+          </ul>
+        </li>
+        <li class="level-1"><a href="#" title="#{val}">Woman</a>
+          <ul>
+            <li class="level-2"><a href="#" title="#{val}">Accessories</a></li>
+            <li class="level-2"><a href="#" title="#{val}">Jackets &amp; Coats</a></li>
+            <li class="level-2"><a href="#" title="#{val}">Polos</a></li>
+            <li class="level-2"><a href="#" title="#{val}">T-Shirts</a></li>
+            <li class="level-2"><a href="#" title="#{val}">Shirts</a></li>
+          </ul>
+        </li>
+        <li class="level-1"><a href="#" title="#{val}">Kids</a>
+          <ul>
+            <li class="level-2"><a href="#" title="#{val}">Accessories</a></li>
+            <li class="level-2"><a href="#" title="#{val}">Jackets &amp; Coats</a></li>
+            <li class="level-2"><a href="#" title="#{val}">Polos</a></li>
+            <li class="level-2"><a href="#" title="#{val}">T-Shirts</a></li>
+            <li class="level-2"><a href="#" title="#{val}">Shirts</a></li>
+            <li class="level-2"><a href="#" title="#{val}">Bags</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <script type="text/javascript" src="js/script.min.js"></script>
+</body>

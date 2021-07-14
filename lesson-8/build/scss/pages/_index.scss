@@ -1,0 +1,14 @@
+.teaser-grid,
+.product-grid,
+.benefit-grid {
+	
+	&__wrapper {
+		@include flexbox;
+		@include flex-wrap(wrap);
+	}
+}
+
+@import 'catalog';
+@import 'product';
+@import 'cart';
+@import 'registration';

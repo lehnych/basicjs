@@ -1,0 +1,197 @@
+footer {
+	background: $footer-bg-dark;
+	
+	img {
+		margin-right: auto;
+		margin-left: auto;
+		display: block;
+	}
+	
+	.footer {
+		
+		&__wrapper {
+			@include media-breakpoint-down(ms) {
+				@include flex-direction(column);
+			}
+			@include flexbox;
+			@include align-items(center);
+			@include justify-content(center);
+		}
+		
+		&__col {
+			@include flexbox;
+			@include align-items(center);
+			
+			> *:not(:first-child) {
+				margin-left: $base-spacing-xxs;
+			}
+		}
+		
+		&__benefits {
+			@include media-breakpoint-up(md) {
+				padding: $base-spacing-lg * 2 0;
+			}
+			padding: $base-spacing-xmd 0;
+			color: $color-white;
+		}
+		
+		&__subscribe {
+			@include media-breakpoint-up(md) {
+				padding: $base-spacing-lg * 2 0;
+			}
+			padding: $base-spacing-xmd 0;
+			background: $footer-bg url("../img/footer-bg.jpg") no-repeat bottom left;
+			background-size: cover;
+			color: $color-black-light;
+			
+			.footer__wrapper {
+				@include media-breakpoint-up(md) {
+					@include justify-content(space-around);
+				}
+				@include media-breakpoint-down(md) {
+					@include flex-direction(column);
+				}
+			}
+			
+			.footer__col {
+				
+				> * {
+					max-width: 360px;
+					margin-right: auto;
+					margin-left: auto;
+				}
+				
+				.review {
+					@include media-breakpoint-down(md) {
+						margin-bottom: $base-spacing-xmd;
+					}
+					
+					img {
+						border-radius: 50%;
+					}
+					
+					blockquote {
+						@include font-size($font-size-xl);
+						margin: $base-spacing-sm 0 0 0;
+						padding: 0;
+						font-weight: $font-weight-regular;
+						text-align: center;
+					}
+				}
+				
+				.nl-subscribe {
+					
+					h4 {
+						@include font-size($font-size-xxxl);
+						@include media-breakpoint-down(ms) {
+							@include font-size($font-size-xxl);
+						}
+						margin-bottom: $base-spacing-sm;
+						font-weight: $font-weight-bold;
+						text-align: center;
+						text-transform: uppercase;
+						
+						span {
+							@include font-size($font-size-l);
+							@include media-breakpoint-down(ms) {
+								@include font-size($font-size-h6);
+							}
+							margin-top: $base-spacing;
+							display: block;
+							font-weight: $font-weight-regular;
+						}
+					}
+					
+					.form-group {
+						margin-bottom: 0;
+						
+						&.group--combo {
+							@include transition(box-shadow 0.4s ease);
+							border-radius: 22.5px;
+							position: relative;
+							
+							&:hover {
+								@include box-shadow(0px 0px 5px 0px rgba($color-black, 0.4));
+							}
+							
+							label {
+								color: $form-text-color;
+								padding-left: $base-spacing-ms;
+							}
+							
+							input {
+								padding-left: $base-spacing-ms;
+								background: $form-background-color;
+								border: none;
+								border-top-left-radius: 22.5px;
+								border-bottom-left-radius: 22.5px;
+							}
+							
+							button {
+								@include transition(background 0.4s ease);
+								background: $deco-color;
+								border: none;
+								border-top-right-radius: 22.5px;
+								border-bottom-right-radius: 22.5px;
+								/*cursor: pointer;*/
+								color: $color-white;
+								
+								&:hover {
+									background: $deco-color-dark;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		&__copiright {
+			padding: $base-spacing-ms 0;
+			color: $color-white;
+			
+			a {
+				
+				&.icon {
+					@include flexbox;
+					@include align-items(center);
+					@include justify-content(center);
+					@include transition(all 0.4s ease);
+					width: 32px;
+					height: 32px;
+					background: $color-white;
+					color: $color-black;
+					
+					&:hover {
+						background: $deco-color;
+						color: $color-white;
+					}
+				}
+			}
+			
+			.footer__wrapper {
+				@include media-breakpoint-up(ms) {
+					@include justify-content(space-between);
+				}
+			}
+			
+			.footer__col {
+
+				&:first-child {
+					@include font-size($font-size-m);
+					@include media-breakpoint-down(ms) {
+						order: 1;
+					}
+				}
+				
+				&:last-child {
+					@include media-breakpoint-down(ms) {
+						padding-top: $base-spacing-xms;
+						padding-bottom: $base-spacing-xmd;
+						order: 0;
+					}
+				}
+			}
+		}
+	}
+}

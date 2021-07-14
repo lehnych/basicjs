@@ -1,0 +1,71 @@
+.categorie-options {
+	@include flexbox;
+	@include align-items(center);
+	@include justify-content(space-between);
+	@include position-relative;
+	@include media-breakpoint-up(md) {
+		@include justify-content(flex-start);
+	}
+	
+	.filter-primary {
+		@include media-breakpoint-up(ms) {
+			padding-right: $base-spacing-xs;
+		}
+		@include media-breakpoint-up(md) {
+			@include flex-grow(0);
+			@include flex-shrink(0);
+			@include calc(flex-basis, #{'100% / 3'});
+		}
+		padding-left: $base-spacing-xs;
+	}
+	
+	.filter-secondary {
+		@include flexbox;
+		@include align-items(center);
+		@include media-breakpoint-up(md) {
+			@include flex(1 0 auto);
+			padding-left: $base-spacing-xs;
+		}
+		padding-right: $base-spacing-xs;
+	}
+}
+
+.product-grid {
+	
+	&__more-products {
+		text-align: center;
+	}
+	
+	&.mode--grid  {
+		
+		.product-item {
+			@include media-breakpoint-up(ms) {
+				@include calc(width, #{'100% / 2'});
+			}
+			@include media-breakpoint-up(md) {
+				@include calc(width, #{'100% / 3'});
+			}
+			
+			&:nth-child(odd) {
+				@include media-breakpoint-between(ms, md) {
+					padding-right: $base-spacing-col;
+				}
+			}
+			
+			&:nth-child(even) {
+				@include media-breakpoint-between(ms, md) {
+					padding-left: $base-spacing-col;
+				}
+			}
+		}
+	}
+	
+	&.mode--list {
+		
+		.product-item {
+			@include media-breakpoint-up(md) {
+				@include calc(width, #{'100% / 2'});
+			}
+		}
+	}
+}

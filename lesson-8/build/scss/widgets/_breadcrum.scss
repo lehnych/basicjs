@@ -1,0 +1,61 @@
+.breadcrumb {
+	background: $intro-bg;
+	
+	&__wrapper {
+		@include flexbox;
+		@include flex-direction(column);
+		@include align-items(center);
+		@include justify-content(center);
+		@include media-breakpoint-up(sm) {
+			@include flex-direction(row);
+			@include justify-content(space-between);
+			padding-top: $base-spacing-xl;
+			padding-bottom: $base-spacing-xl;
+		}
+		padding-top: $base-spacing-sm;
+		padding-bottom: $base-spacing-sm;
+	}
+	
+	h1 {
+		@include font-size($font-size-h2);
+		@include media-breakpoint-up(sm) {
+			margin-bottom: 0;
+		}
+		margin-bottom: $base-spacing-ms;
+		font-weight: $font-weight-regular;
+		color: $deco-color;
+		text-transform: uppercase;
+	}
+	
+	ul {
+		@include flexbox;
+		@include align-items(center);
+		margin-bottom: 0;
+		text-transform: uppercase;
+		
+		li {
+			margin-bottom: 0;
+			
+			a {
+				
+				&:hover {
+					color: $deco-color;
+				}
+				
+				&.is--active {
+					font-weight: $font-weight-bold;
+					color: $deco-color;
+				}
+				
+			}
+			
+			&:not(:first-child) {
+				
+				&:before {
+					margin: 0 $base-spacing;
+					content: '/';
+				}
+			}
+		}
+	}
+}

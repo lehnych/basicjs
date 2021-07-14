@@ -1,0 +1,27 @@
+mixin productCartItem(productId, productName, productLink, productImg, productColor, productSize, Quantity, productPrice)
+	- var dataFieldId = 'quantity-p-'+productId
+
+	.product-item
+		.product-item__wrapper
+			.product-item__picture
+				picture
+					img.img--fluid(src=productImg alt=productName)
+			.product-item__body
+				.product-item__decription
+					h4
+						a(href=productLink title=productName)
+							= productName
+						a(href='#' title='Delete Product from cart')
+							i.icon__times
+					p.product-option__color
+						|Color: #{productColor}
+					p.product-option__size
+					| Size: #{productSize}
+					p.product-option__quantity
+						|Quantity:
+						span.quantity-field
+							span.quantity-field__minus(data-quantity='minus' data-field='quantity-p-'+productId) -
+							input.form-control(type='text' id='fieldQuantity#{productId}' name='quantity-p-'+productId min="1" max="5" value=Quantity)
+							span.quantity-field__plus(data-quantity='plus' data-field='quantity-p-'+productId) +
+				.product-item__price
+					span.price--discount= productPrice

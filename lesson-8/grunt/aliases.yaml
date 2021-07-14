@@ -1,0 +1,16 @@
+production:
+  - 'copy'
+  - 'jshint:theme'
+  - 'sass:theme'
+  - 'uglify:theme'
+  - 'csswring:vendor'
+  - 'watch'
+
+development:
+  - 'jshint:theme'
+  - 'sass:theme'
+  - 'uglify:theme'
+  - 'csswring:vendor'
+
+default:
+  - 'production'

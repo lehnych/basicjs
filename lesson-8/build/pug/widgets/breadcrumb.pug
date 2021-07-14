@@ -1,0 +1,18 @@
+- var pageTitle = pageTitle
+
+section.breadcrumb
+	.breadcrumb__wrapper.container
+		h1
+			|#{pageTitle}
+		if selfBreadcrumb
+			ul
+				li
+					a(href='index.html' title='Home') Home
+				if catalogType == 'Men'
+					li
+						a(href='#' title='Men') Men
+				if catalogType == 'Women'
+					li
+						a(href='#' title='Women') Women
+				li
+					a(href='#' title=pageTitle class='is--active') #{pageTitle}

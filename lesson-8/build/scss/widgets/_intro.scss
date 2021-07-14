@@ -1,0 +1,70 @@
+.intro {
+	@include media-breakpoint-up(ms) {
+		aspect-ratio: 16 / 9;
+	}
+	@include media-breakpoint-up(md) {
+		@include calc(height, #{'100vh - 68px'});
+		aspect-ratio: inherit;
+	}
+	aspect-ratio: 1 / 1;
+	background-color: $intro-bg;
+	
+	&__wrapper {
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(center);
+		@include media-breakpoint-up(sm) {
+			@include justify-content(space-around);
+		}
+		height: 100%;
+		overflow: hidden;
+	}
+	
+	&__header {
+		@include font-size(38px);
+		@include media-breakpoint-up(sm) {
+			@include font-size(44px);
+		}
+		@include media-breakpoint-up(md) {
+			@include font-size(48px);
+		}
+		margin-bottom: 0;
+		padding-bottom: $base-spacing;
+		padding-left: $base-spacing-xs;
+		order: 1;
+		border-left: 10px solid $deco-color;
+		color: $intro-text-color;
+		line-height: 46px;
+		text-transform: uppercase;
+		
+		> span {
+			@include font-size($font-size-xl);
+			@include media-breakpoint-up(sm) {
+				@include font-size($font-size-xxxl);
+			}
+			@include media-breakpoint-up(md) {
+				@include font-size(32px);
+			}
+			margin-top: $base-spacing;
+			display: block;
+			line-height: 100%;
+			
+			span {
+				color: $deco-color;
+			}
+		}
+	}
+	
+	&__img {
+		@include media-breakpoint-down(ms) {
+			display: none;
+		}
+		height: 100%;
+		padding-top: $base-spacing-sm;
+		order: 0;
+		
+		img {
+			height: 100%;
+		}
+	}
+}

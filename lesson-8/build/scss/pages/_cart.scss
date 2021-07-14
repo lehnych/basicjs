@@ -1,0 +1,227 @@
+.cart {
+	
+	h3 {
+		@include font-size($font-size-h5);
+		font-weight: $font-weight-light;
+		text-transform: uppercase;
+	}
+	
+	&__wrapper {
+		@include flexbox;
+		@include flex-direction(column);
+		@include media-breakpoint-up(md) {
+			@include flex-direction(row);
+			@include justify-content(space-between);
+		}
+	}
+	
+	&__col {
+		
+		&:first-child {
+			@include media-breakpoint-up(md) {
+				@include flex(0 1 100%);
+				max-width: 650px;
+				margin-left: $base-spacing-sm;
+			}
+			@include media-breakpoint-down(sm) {
+				margin-top: $base-spacing-xmd;
+			}
+			
+			.product-grid {
+				
+				&.mode--list {
+					
+					.product-item {
+						@include box-shadow(17px 19px 24px rgba($color-black, 0.13));
+						width: 100%;
+						padding: 0;
+						
+						&__wrapper {
+							@include flex-direction(row);
+							max-width: 100%;
+							background: $color-white;
+							
+							[class^="product-option__"],
+							[class*=" product-option__"] {
+								
+								&:not(:last-child) {
+									margin-bottom: $base-spacing;
+								}
+							}
+							
+							.product-option {
+								
+								&__quantity {
+									@include flexbox;
+									@include flex-direction(column);
+									@include align-items(flex-start);
+									@include justify-content(flex-start);
+									@media (min-width: 375px) {
+										@include align-items(center);
+										@include flex-direction(row);
+									}
+									
+									.quantity-field {
+										@include flexbox;
+										@include align-items(center);
+										@include justify-content(flex-start);
+										@media (min-width: 375px) {
+											@include flex-direction(row);
+											margin-top: 0;
+											margin-left: $base-spacing;
+										}
+										margin-top: $base-spacing;
+										
+										input {
+											width: 40px;
+											height: 25px;
+											text-align: center;
+										}
+										
+										&__minus,
+										&__plus {
+											@include flexbox;
+											@include align-items(center);
+											@include justify-content(center);
+											width: 25px;
+											height: 25px;
+											cursor: pointer;
+											border: 1px solid $border-color;
+										}
+										
+										&__minus {
+											width: 25px;
+											height: 25px;
+											border-right: none;
+										}
+										
+										&__plus {
+											border-left: none;
+										}
+									}
+								}
+							}
+						}
+						
+						&__picture {
+							@include media-breakpoint-down(ms) {
+								@include flex-grow(0);
+								@include flex-shrink(0);
+								@include calc(flex-basis, #{'100% / 2'});
+								max-width: 155px;
+							}
+						}
+						
+						&__decription {
+							
+							h4 {
+								@include flexbox;
+								@include justify-content(space-between);
+								@include font-size($font-size-m);
+							}
+						}
+						
+						&__delete {
+							
+							img {
+								@media (max-width: 374px) {
+									width: 14px;
+								}
+							}
+						}
+						
+						&:last-child {
+							margin-bottom: 0;
+						}
+					}
+				}
+			}
+			
+			.button-set {
+				@include flexbox;
+				@include justify-content(space-between);
+				@include media-breakpoint-only(sm) {
+					@include justify-content(space-evenly);
+				}
+				margin-top: $base-spacing-xmd;
+				
+				.btn {
+					@include media-breakpoint-down(ms) {
+						@include font-size($font-size-xs);
+						@include calc(width, #{'50% -'$base-spacing-col});
+						font-weight: $font-weight-regular;
+						padding: 0 $base-spacing-xxs;
+					}
+				}
+			}
+		}
+		
+		&:last-child {
+			@include flexbox;
+			@include flex-direction(column);
+			@include media-breakpoint-only(sm) {
+				@include flex-direction(row);
+				@include justify-content(space-between);
+			}
+			@include media-breakpoint-up(md) {
+				@include flex(0 1 100%);
+				max-width: 360px;
+				margin-top: 0 !important;
+				margin-left: $base-spacing-sm;
+			}
+			margin-top: $base-spacing-xmd;
+			
+			> div {
+				@include media-breakpoint-only(sm) {
+					@include calc(width, #{'50% -'$base-spacing-xs});
+				}
+			}
+		}
+	}
+	
+	&__total {
+		@include media-breakpoint-only(sm) {
+			margin-top: $base-spacing-sm;
+		}
+		margin-top: $base-spacing-xmd;
+		
+		&__wrapper {
+			padding: $base-spacing-md;
+			background: $content-element-bg;
+		}
+		
+		&__item {
+			@include flexbox;
+			@include justify-content(flex-end);
+			@include font-size($font-size-xs);
+			text-transform: uppercase;
+			
+			span {
+				text-align: right;
+				
+				&:last-child {
+					min-width: 100px;
+				}
+			}
+			
+			&:not(.grand-total) {
+				margin-bottom: $base-spacing;
+			}
+			
+			&.grand--total {
+				@include font-size($font-size-m);
+				
+				span {
+					
+					&:last-child {
+						color: $deco-color;
+					}
+				}
+			}
+		}
+		
+		.btn {
+			width: 100%;
+		}
+	}
+}

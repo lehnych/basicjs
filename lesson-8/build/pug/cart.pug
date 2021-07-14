@@ -1,0 +1,55 @@
+extends layout/base
+
+block variables
+	- var pageMetaTitle = 'Shopping cart'
+	- var pageTitle = 'Cart'
+	- var sectionBreadcrumb = true
+
+block maincontent
+	section.cart
+		.cart__wrapper
+			.cart__col
+				h3
+					|Products
+				.product-grid.mode--list
+					.product-grid__wrapper
+						+productCartItem('1', 'Ellery X M\'O Capsule', 'product.html', 'img/product/product-m-03-thumb.jpg', 'red', 'XL', '2', '$104.00')
+						+productCartItem('2', 'Ellery X M\'O Capsule', 'product.html', 'img/product/product-m-02-thumb.jpg', 'red', 'XL', '2', '$104.00')
+				.button-set
+					a.btn.btn__ghost--negative(href='#' title='Clear shopping cart')
+						|Clear shopping cart
+					a.btn.btn__ghost--negative(href='#' title='Continue shopping')
+						|Continue shopping
+			.cart__col
+				.cart__shipping-address
+					h3
+						|Shipping address
+					form#shipping-address-form
+						.form-group-row.row--two-col
+							+input(true, 'text', 'First Name', 'firstName', 'firstName', 'First Name', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+							+input(true, 'text', 'Last Name', 'lastName', 'lastName', 'Last Name', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+						+input(true, 'email', 'E-mail', 'email', 'email', 'E-mail', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+						+input(true, 'tel', 'Phone', 'tel', 'tel', 'Phone', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+						.form-group-row.row--two-col
+							+input(true, 'text', 'Street', 'street', 'street', 'Street', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+							+input(true, 'number', 'House Nr.', 'houseNr', 'houseNr', 'House Nr.', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+						.form-group-row.row--two-col
+							+input(true, 'text', 'City', 'city', 'city', 'City', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+							+input(true, 'number', 'Zip', 'zip', 'zip', 'Zip', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+						+select(true, 'Country', 'country', 'country', false, false, false, false, 'form-control', false, ['Select', 'Germany', 'Russia', 'USA'])
+						+button('Get a qutet','submit', 'btn btn__ghost--negative', false , false, false)
+				.cart__total
+					.cart__total__wrapper
+						.cart__total__item
+							span
+								|Sub total
+							span
+								|$900
+						.cart__total__item.grand--total
+							span
+								|Grand total
+							span
+								|$900
+						hr
+						a.btn.btn__primary(href='registration.html' title='Registration')
+							|Proceed to Checkout

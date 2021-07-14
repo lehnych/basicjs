@@ -1,0 +1,33 @@
+.pagination {
+	@include flexbox;
+	@include justify-content(center);
+	margin-top: $base-spacing-sm !important;
+	
+	&__wrapper {
+		@include flexbox;
+		@include flex(1 0 100%);
+		@include align-items(center);
+		@include justify-content(space-between);
+		max-width: 290px;
+		margin-right: auto;
+		margin-left: auto;
+		border: 1px solid $border-color-light;
+		border-radius: 3px;
+		
+		a {
+			@include flex-grow(0);
+			@include flex-shrink(0);
+			@include calc(flex-basis, #{'100% / 9'});
+			@include position-relative;
+			min-height: 15px;
+			padding: $base-spacing-xs $base-spacing;
+			line-height: 15px;
+			text-align: center;
+			
+			&:hover,
+			&.is--active {
+				color: $deco-color;
+			}
+		}
+	}
+}

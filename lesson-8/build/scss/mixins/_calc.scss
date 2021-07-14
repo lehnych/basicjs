@@ -1,0 +1,10 @@
+@mixin calc($property, $calculation) {
+    #{$property}: -webkit-calc(#{$calculation});
+    #{$property}:    -moz-calc(#{$calculation});
+    #{$property}:         calc(#{$calculation});
+}
+
+@mixin calc-fallback($property, $calculation, $fallback) {
+    #{$property}: $fallback;
+    @include calc($property, $calculation);
+}

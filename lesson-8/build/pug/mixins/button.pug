@@ -1,0 +1,20 @@
+mixin button(buttonLabel, buttonType, buttonClass, buttonIcon, buttonIconVariant, buttonIconPosition)
+
+	mixin buttonContent
+		if buttonIcon && buttonLabel != ''
+			if buttonIconPosition == 'right'
+				span #{buttonLabel}
+				i(class=buttonIconVariant)
+			else
+				i(class=buttonIconVariant)
+				span #{buttonLabel}
+		else if buttonIcon
+			i(class=buttonIconVariant)
+		else
+			=buttonLabel
+
+	button(
+		type=buttonType
+		class=buttonClass
+		)
+			+buttonContent

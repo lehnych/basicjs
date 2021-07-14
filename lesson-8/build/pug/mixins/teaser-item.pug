@@ -1,0 +1,14 @@
+mixin teaserItem(teaserFullWidth, teaserSubTitle, teaserSubTitle,  teaserImg, teaserImgAlt)
+
+	if teaserFullWidth
+		- var teaserFullWidthClass = 'full--width'
+
+	.teaser-item(class=teaserFullWidthClass)
+		.teaser-item__wrapper
+			.teaser-item__picture
+				picture
+					img.img--fluid(src=teaserImg alt=teaserImgAlt)
+			.teaser-item__body
+				h4
+					span= teaserSubTitle
+					|#{teaserSubTitle}

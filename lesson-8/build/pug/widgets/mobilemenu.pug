@@ -1,0 +1,24 @@
+nav#mobile-menu-bar
+	#mobile-menu-header
+		span
+			|Menu
+		i.icon__times
+	ul#mobile-menu
+		each val in cat
+			li(class="level-1")
+				a(href='#' title="#{val}")= val
+				if val == "Men"
+					ul
+						each val in catMen
+							li(class="level-2")
+								a(href='#' title="#{val}")= val
+				else if val == "Woman"
+					ul
+						each val in catWoman
+							li(class="level-2")
+								a(href='#' title="#{val}")= val
+				else
+					ul
+						each val in catKids
+							li(class="level-2")
+								a(href='#' title="#{val}")= val
