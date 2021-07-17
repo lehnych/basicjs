@@ -12,7 +12,8 @@ module.exports = {
                 'build/vendor/custom-file-input/js/custom-file-input.js',
                 'build/vendor/aos/js/aos.js',
                 'build/vendor/swiper/js/swiper.js',
-                'build/js/main.js'
+                'build/js/main.js',
+                'build/js/cart.js'
             ]
         }
     }

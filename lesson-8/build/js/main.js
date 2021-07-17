@@ -1,9 +1,25 @@
 AOS.init();
 
 $(document).ready(function() {
-
     var w = $(window).width();
+    var baseSpacing =  5;
+    var baseSpacing_col = baseSpacing * 3 / 2;  //7.5px
+    var baseSpacing_xxs = baseSpacing * 2;  //10px
+    var baseSpacing_xs = baseSpacing * 3;  //15px
+    var baseSpacing_ms = baseSpacing * 4;  //20px
+    var baseSpacing_xms = baseSpacing * 5;  //25px
+    var baseSpacing_sm = baseSpacing * 6;  //30px
+    var baseSpacing_xsm = baseSpacing * 7;  //35px
+    var baseSpacing_md = baseSpacing * 8;  //40px
+    var baseSpacing_xmd = baseSpacing * 9;  //45px
+    var baseSpacing_lg = baseSpacing * 10; //50px
+    var baseSpacing_xlg = baseSpacing * 11; //55px
+    var baseSpacing_xl = baseSpacing * 12; //60px
+
     var headerHeight = $('header').outerHeight();
+    var mobileMenuHeaderHeight = $('#mobile-menu-bar__header').outerHeight();
+    var cartBarHeaderHeight = $('#cart-bar__header').outerHeight();
+
 
     /* Slider */
     var swiper = new Swiper(".mySwiper", {
@@ -21,15 +37,36 @@ $(document).ready(function() {
         }*/
     });
 
-    /* Mobile Nav*/
+    /* Mobile Nav */
     $('#mobile-menu-bar').css('top', headerHeight);
+    $('#mobile-menu-bar__content').css({
+        'top': mobileMenuHeaderHeight,
+        'height': 'calc(100% - ' + (headerHeight + mobileMenuHeaderHeight) + 'px)',
+    });
 
-    $('#mobile-menu-icon').on('click',function(){
+    $('#mobile-menu-bar__toggle').on('click',function(){
         $('#mobile-menu-bar').toggleClass('active');
         $('body').toggleClass('noscroll');
     });
-    $('#mobile-menu-header .icon__times').on('click',function(){
+    $('#mobile-menu-bar__header .icon__times').on('click',function(){
         $('#mobile-menu-bar').removeClass('active');
+        $('body').removeClass('noscroll');
+    });
+
+    /* Cart Bar */
+    $('#cart-bar').css('top', headerHeight);
+
+    $('#cart-bar__content').css({
+        'top': cartBarHeaderHeight,
+        'height': 'calc(100% - ' + (headerHeight + cartBarHeaderHeight) + 'px)',
+    });
+
+    $('#cart-bar__toggle').on('click',function(){
+        $('#cart-bar').toggleClass('active');
+        $('body').toggleClass('noscroll');
+    });
+    $('#cart-bar__header .icon__times').on('click',function(){
+        $('#cart-bar').removeClass('active');
         $('body').removeClass('noscroll');
     });
 

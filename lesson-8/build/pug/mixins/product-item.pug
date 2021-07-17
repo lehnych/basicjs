@@ -1,8 +1,8 @@
-mixin productItem(productName, productLink, productImg, productDescription, productPrice)
+mixin productItem(productName, productLink, productImg, productDescription, productPrice, productCurrency)
 	.product-item
 		.product-item__wrapper
 			.product-item__picture
-				a(href=productLink title=productName)
+				a(href='#' title=productName).btn__add-to-cart
 					span.btn.btn__ghost--negative.btn--transparent
 						i.icon__cart
 						|#{'Add to Cart'}
@@ -14,4 +14,5 @@ mixin productItem(productName, productLink, productImg, productDescription, prod
 						a(href=productLink title=productName)= productName
 					p= productDescription
 				.product-item__price
-					span.price--discount= productPrice
+					span.price--discount
+						= productPrice

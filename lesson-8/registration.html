@@ -17,10 +17,10 @@
             <div class="search"><a href="#" title="Search"><i class="icon__search"></i></a></div>
           </div>
           <div class="header__col">
-            <div class="menu"><a href="#" title="Menu"><i class="icon__bars" id="mobile-menu-icon"></i></a></div>
+            <div class="menu"><a href="#" title="Menu"><i class="icon__bars" id="mobile-menu-bar__toggle"></i></a></div>
             <div class="user"><a href="#" title="My Account"><i class="icon__user"></i></a></div>
             <div class="basket"><a href="#" title="My Basket">
-                <div class="basket__count">0</div><i class="icon__cart"></i></a></div>
+                <div class="basket__count">0</div><i class="icon__cart" id="cart-bar__toggle"></i></a></div>
           </div>
         </div>
       </div>
@@ -225,38 +225,49 @@
         </div>
       </div>
     </footer>
-    <nav id="mobile-menu-bar">
-      <div id="mobile-menu-header"><span>Menu</span><i class="icon__times"></i></div>
-      <ul id="mobile-menu">
-        <li class="level-1"><a href="#" title="#{val}">Men</a>
-          <ul>
-            <li class="level-2"><a href="#" title="#{val}">Accessories</a></li>
-            <li class="level-2"><a href="#" title="#{val}">Bags</a></li>
-            <li class="level-2"><a href="#" title="#{val}">Denim</a></li>
-            <li class="level-2"><a href="#" title="#{val}">T-Shirts</a></li>
-          </ul>
-        </li>
-        <li class="level-1"><a href="#" title="#{val}">Woman</a>
-          <ul>
-            <li class="level-2"><a href="#" title="#{val}">Accessories</a></li>
-            <li class="level-2"><a href="#" title="#{val}">Jackets &amp; Coats</a></li>
-            <li class="level-2"><a href="#" title="#{val}">Polos</a></li>
-            <li class="level-2"><a href="#" title="#{val}">T-Shirts</a></li>
-            <li class="level-2"><a href="#" title="#{val}">Shirts</a></li>
-          </ul>
-        </li>
-        <li class="level-1"><a href="#" title="#{val}">Kids</a>
-          <ul>
-            <li class="level-2"><a href="#" title="#{val}">Accessories</a></li>
-            <li class="level-2"><a href="#" title="#{val}">Jackets &amp; Coats</a></li>
-            <li class="level-2"><a href="#" title="#{val}">Polos</a></li>
-            <li class="level-2"><a href="#" title="#{val}">T-Shirts</a></li>
-            <li class="level-2"><a href="#" title="#{val}">Shirts</a></li>
-            <li class="level-2"><a href="#" title="#{val}">Bags</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
+    <div class="mobile-menu-bar" id="mobile-menu-bar">
+      <div class="mobile-menu-bar__header" id="mobile-menu-bar__header"><span>Menu</span><i class="icon__times"></i></div>
+      <div class="mobile-menu-bar__content" id="mobile-menu-bar__content">
+        <ul>
+          <li class="level-1"><a href="#" title="#{val}">Men</a>
+            <ul>
+              <li class="level-2"><a href="#" title="#{val}">Accessories</a></li>
+              <li class="level-2"><a href="#" title="#{val}">Bags</a></li>
+              <li class="level-2"><a href="#" title="#{val}">Denim</a></li>
+              <li class="level-2"><a href="#" title="#{val}">T-Shirts</a></li>
+            </ul>
+          </li>
+          <li class="level-1"><a href="#" title="#{val}">Woman</a>
+            <ul>
+              <li class="level-2"><a href="#" title="#{val}">Accessories</a></li>
+              <li class="level-2"><a href="#" title="#{val}">Jackets &amp; Coats</a></li>
+              <li class="level-2"><a href="#" title="#{val}">Polos</a></li>
+              <li class="level-2"><a href="#" title="#{val}">T-Shirts</a></li>
+              <li class="level-2"><a href="#" title="#{val}">Shirts</a></li>
+            </ul>
+          </li>
+          <li class="level-1"><a href="#" title="#{val}">Kids</a>
+            <ul>
+              <li class="level-2"><a href="#" title="#{val}">Accessories</a></li>
+              <li class="level-2"><a href="#" title="#{val}">Jackets &amp; Coats</a></li>
+              <li class="level-2"><a href="#" title="#{val}">Polos</a></li>
+              <li class="level-2"><a href="#" title="#{val}">T-Shirts</a></li>
+              <li class="level-2"><a href="#" title="#{val}">Shirts</a></li>
+              <li class="level-2"><a href="#" title="#{val}">Bags</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="cart-bar" id="cart-bar">
+      <div class="cart-bar__header" id="cart-bar__header"><span>Cart</span><i class="icon__times"></i></div>
+      <div class="cart-bar__content" id="cart-bar__content">
+        <div class="cart-bar__cart-items"></div>
+        <div class="cart-bar__cart-total"><span class="cart-total__title">Total</span>
+          <san class="cart-total__price">$0</san>
+        </div>
+      </div>
+    </div>
   </div>
   <script type="text/javascript" src="js/script.min.js"></script>
 </body>

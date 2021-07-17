@@ -1,4 +1,4 @@
-#mobile-menu-bar {
+.mobile-menu-bar {
 	@include box-shadow(6px 4px 35px rgba($color-black, 0.2));
 	@include transition(all 0.8s);
 	@include position(fixed, 0, -315px, auto, auto);
@@ -13,7 +13,7 @@
 		right: 0;
 	}
 	
-	#mobile-menu-header {
+	&__header {
 		@include flexbox;
 		@include align-items(center);
 		@include justify-content(space-between);
@@ -32,21 +32,24 @@
 		}
 	}
 	
-	ul {
+	&__content {
+		@include position(absolute, auto, auto, auto, auto);
+		width: 100%;
+		padding: $base-spacing-xs;
+		font-weight: $font-weight-regular;
+		overflow: hidden;
 		
-		&#mobile-menu {
-			@include position(absolute, 48px, auto, auto, auto);
-			width: 100%;
-			height: calc(100% - 48px);
-			padding: $base-spacing-xs;
-			font-weight: $font-weight-regular;
+		> ul {
+			height: 100%;
+			margin: 0;
+			padding: 0;
 			overflow-x: hidden;
 			
 			li {
-				text-transform:uppercase;
+				text-transform: uppercase;
 				
 				&.level-1 {
-					margin-bottom: $base-spacing-xs;
+					margin-bottom: $base-spacing-sm;
 					
 					> a {
 						color: $deco-color;
@@ -69,7 +72,12 @@
 						}
 					}
 				}
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
 			}
 		}
+
 	}
 }

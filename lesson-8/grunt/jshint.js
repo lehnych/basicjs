@@ -6,7 +6,7 @@ module.exports = {
         eqnull: true,
         browser: true,
         expr: true,
-        laxbreak:true,
+        laxbreak: true,
         esnext: true,
         '-W032': true,
         //quotmark: 'single',

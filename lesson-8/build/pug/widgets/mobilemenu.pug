@@ -1,24 +1,25 @@
-nav#mobile-menu-bar
-	#mobile-menu-header
+#mobile-menu-bar.mobile-menu-bar
+	#mobile-menu-bar__header.mobile-menu-bar__header
 		span
 			|Menu
 		i.icon__times
-	ul#mobile-menu
-		each val in cat
-			li(class="level-1")
-				a(href='#' title="#{val}")= val
-				if val == "Men"
-					ul
-						each val in catMen
-							li(class="level-2")
-								a(href='#' title="#{val}")= val
-				else if val == "Woman"
-					ul
-						each val in catWoman
-							li(class="level-2")
-								a(href='#' title="#{val}")= val
-				else
-					ul
-						each val in catKids
-							li(class="level-2")
-								a(href='#' title="#{val}")= val
+	#mobile-menu-bar__content.mobile-menu-bar__content
+		ul
+			each val in cat
+				li(class="level-1")
+					a(href='#' title="#{val}")= val
+					if val == "Men"
+						ul
+							each val in catMen
+								li(class="level-2")
+									a(href='#' title="#{val}")= val
+					else if val == "Woman"
+						ul
+							each val in catWoman
+								li(class="level-2")
+									a(href='#' title="#{val}")= val
+					else
+						ul
+							each val in catKids
+								li(class="level-2")
+									a(href='#' title="#{val}")= val
