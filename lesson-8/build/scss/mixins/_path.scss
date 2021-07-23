@@ -1,0 +1,4 @@
+@function path-var($resource-path) {
+    $path: '#{$resource-path}';
+    @return #{$path};
+}

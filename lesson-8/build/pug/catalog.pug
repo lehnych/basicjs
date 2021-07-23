@@ -1,0 +1,104 @@
+extends layout/base
+
+block variables
+	- var pageMetaTitle = 'Catalog'
+	- var pageTitle = 'New Arrivals'
+	- var catalogType = 'Women'
+	- var sectionBreadcrumb = true
+	- var selfBreadcrumb = true
+
+block maincontent
+	section.categorie-options.row
+		.filter-primary
+			.filter-primary__item
+				.filter-primary__item__wrapper
+					.filter-primary__item__header
+						span
+							|Filter
+						span
+							i.icon__filter
+					.filter-primary__item__content
+						details
+							summary
+								|Category
+							ul
+								each val in filterCat
+									li
+										a(href='#' title="#{val}")= val
+						details
+							summary
+								|Brand
+							ul
+								each val in filterBrand
+									li
+										a(href='#' title="#{val}")= val
+						details
+							summary
+								|Designer
+							ul
+								each val in filterDesigner
+									li
+										a(href='#' title="#{val}")= val
+		.filter-secondary
+			.filter-secondary__item.dropdown
+				.dropdown__header.dropdown-toggle(data-bs-target='#filter-secondary-trends' data-bs-toggle='dropdown' aria-expanded='false')
+					span
+						|Trending now
+					span
+						i.icon__angle-down
+				#filter-secondary-trends.dropdown__content.dropdown-menu
+					+inputCheckbox(true, 'Trend 1', 'trend1', 'trend1', false, false, false, 'custom-element__input')
+					+inputCheckbox(true, 'Trend 2', 'trend2', 'trend2', false, false, false, 'custom-element__input')
+					+inputCheckbox(true, 'Trend 3', 'trend3', 'trend3', false, false, false, 'custom-element__input')
+					+inputCheckbox(true, 'Trend 4', 'trend4', 'trend4', false, false, false, 'custom-element__input')
+			.filter-secondary__item.dropdown
+				.dropdown__header.dropdown-toggle(data-bs-target='#filter-secondary-size' data-bs-toggle='dropdown' aria-expanded='false')
+					span
+						|Size
+					span
+						i.icon__angle-down
+				#filter-secondary-size.dropdown__content.dropdown-menu
+					+inputCheckbox(true, 'XS', 'sizeXS', 'sizeXS', false, false, false, 'custom-element__input')
+					+inputCheckbox(true, 'S', 'sizeS', 'sizeS', false, false, false, 'custom-element__input')
+					+inputCheckbox(true, 'M', 'sizeM', 'sizeM', false, false, false, 'custom-element__input')
+					+inputCheckbox(true, 'L', 'sizeL', 'sizeL', false, false, false, 'custom-element__input')
+			.filter-secondary__item.dropdown
+				.dropdown__header.dropdown-toggle(data-bs-target='#filter-secondary-price' data-bs-toggle='dropdown' aria-expanded='false')
+					span
+						|Price
+					span
+						i.icon__angle-down
+				#filter-secondary-price.dropdown__content.dropdown-menu
+					|content
+
+	section.product-grid.mode--grid.row
+		.product-grid__wrapper
+			+productItem('Ellery X M O Capsule 1', 'product.html', 'img/product/product-m-01-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M O Capsule 2', 'product.html', 'img/product/product-m-02-thumb.jpg', 'Known for her sculptural takes on traditional tailoring.', '$62.00')
+			+productItem('Ellery X M O Capsule 3', 'product.html', 'img/product/product-m-03-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M O Capsule 4', 'product.html', 'img/product/product-m-04-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M O Capsule 5', 'product.html', 'img/product/product-m-05-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M O Capsule 6', 'product.html', 'img/product/product-m-06-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M O Capsule 7', 'product.html', 'img/product/product-m-07-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M O Capsule 8', 'product.html', 'img/product/product-m-08-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M O Capsule 9', 'product.html', 'img/product/product-m-09-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+	section.pagination
+		.pagination__wrapper
+			a(href='#' title='back')
+				i.icon__angle-left
+			a.is--active(href='#' title='1')
+				|1
+			a(href='#' title='2')
+				|2
+			a(href='#' title='3')
+				|3
+			a(href='#' title='4')
+				|4
+			a(href='#' title='5')
+				|5
+			a(href='#' title='...')
+				|...
+			a(href='#' title='20')
+				|20
+			a(href='#' title='next')
+				i.icon__angle-right

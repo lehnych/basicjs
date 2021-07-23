@@ -1,0 +1,14 @@
+@mixin hyphenate() {
+    .chrome.windows & {
+        @include media-breakpoint-up(ms) {
+            word-break: break-word;
+        }
+
+        word-break: break-all;
+    }
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}

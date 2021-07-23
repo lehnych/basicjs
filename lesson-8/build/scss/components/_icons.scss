@@ -1,0 +1,42 @@
+[class^="icon__"],
+[class*=" icon__"] {
+	@include flexbox;
+	@include align-items(center);
+	@include justify-content(center);
+	speak: none;
+	font-family: $gb-fontname;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@include icon(angle-down, $gb-angle-down);
+@include icon(angle-left, $gb-angle-left);
+@include icon(angle-right, $gb-angle-right);
+@include icon(angle-up, $gb-angle-up);
+@include icon(bars, $gb-bars);
+@include icon(cart, $gb-cart);
+@include icon(check, $gb-check);
+@include icon(crown, $gb-crown);
+@include icon(discount, $gb-discount);
+@include icon(facebook, $gb-facebook);
+@include icon(filter, $gb-filter);
+@include icon(instagram, $gb-instagram);
+@include icon(long-arrow-down, $gb-long-arrow-down);
+@include icon(long-arrow-left, $gb-long-arrow-left);
+@include icon(long-arrow-right, $gb-long-arrow-right);
+@include icon(long-arrow-up, $gb-long-arrow-up);
+@include icon(map-marker, $gb-map-marker);
+@include icon(minus, $gb-minus);
+@include icon(pinterest, $gb-pinterest);
+@include icon(plus, $gb-plus);
+@include icon(search, $gb-search);
+@include icon(times, $gb-times);
+@include icon(truck, $gb-truck);
+@include icon(twitter, $gb-twitter);
+@include icon(user, $gb-user);
+@include icon(youtube-play, $gb-youtube-play);

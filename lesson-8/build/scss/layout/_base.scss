@@ -1,0 +1,190 @@
+html,
+body {
+	@include media-breakpoint-up(ms) {
+		height: 100%;
+	}
+}
+
+body {
+	padding-top: 0;
+	background: $body-bg;
+	font-family: $font-family-base;
+	font-weight: $font-weight-light;
+	font-size: $font-size-base;
+	color: $text-color;
+	line-height: 1.2;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+	margin: 0 0 $base-spacing-xxs 0;
+	font-family: $font-family-base;
+	
+}
+
+h1, .h1 {
+	@include font-size($font-size-h1);
+}
+
+h2, .h2 {
+	@include font-size($font-size-h2);
+}
+
+h3, .h3 {
+	@include font-size($font-size-h3);
+}
+
+h4, .h4 {
+	@include font-size($font-size-h4);
+}
+
+h5, .h5 {
+	@include font-size($font-size-h5);
+}
+
+h6, .h6 {
+	@include font-size($font-size-h6);
+}
+
+p {
+	margin-top: 0;
+	margin-bottom: $base-spacing-xs;
+	
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+	
+	&:not([href]) {
+		cursor: pointer;
+	}
+}
+
+ul,
+ol {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+picture {
+	display: block;
+	
+	img {
+		max-width: 100%;
+		display: block;
+	}
+}
+
+/*img {
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}*/
+
+hr {
+	height: 1px;
+	width: 100%;
+	margin: $base-spacing-xs 0;
+	border: none;
+	background: $border-color;
+}
+
+section {
+	
+	+ section {
+		
+		&:not(.poduct-slider) {
+			margin-top: $base-spacing-xmd;
+		}
+	}
+}
+
+.page__wrapper {
+	@include media-breakpoint-up(ms) {
+		@include flexbox;
+		@include flex-direction(column);
+		@include position-relative;
+		min-height: 100%;
+		position: relative;
+	}
+}
+
+main {
+	@include media-breakpoint-up(ms) {
+		@include flex(1 0 auto);
+	}
+	@include media-breakpoint-up(md) {
+		padding-bottom: $base-spacing-xl;
+	}
+	padding-bottom: $base-spacing-xmd;
+}
+
+.main__wrapper {
+	margin-top: $base-spacing-xmd;
+}
+
+.container,
+.container-fluid {
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
+	padding-right: $base-spacing-xs;
+	padding-left: $base-spacing-xs;
+}
+.container {
+	max-width: 1170px;
+	
+	&-fluid {
+		max-width: 1920px;
+	}
+}
+
+.row {
+	margin-right: -$base-spacing-xs;
+	margin-left: -$base-spacing-xs;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.noscroll {
+	position: relative;
+	overflow: hidden;
+}
+
+.is {
+	
+	&--active {
+	
+	}
+	
+	&--flex {
+		display: flex !important;
+	}
+	
+	&--block {
+		display: block !important;
+	}
+	
+	&--hidden {
+		display: none !important;
+	}
+	
+	&--nowrap {
+		white-space: nowrap !important;
+	}
+}

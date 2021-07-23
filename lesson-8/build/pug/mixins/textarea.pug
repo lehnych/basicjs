@@ -1,0 +1,38 @@
+mixin textarea(textareaCustom, textareaLabel, textareaId, textareaName, textareaPlaceholder, textareaRows, textareaMaxLength, textareaAutofocus, textareaDisabled, textareaReadonly, textareaRequired, textareaClass)
+	.form-group
+		if textareaCustom
+			.form-label-group
+				textarea(
+					id=textareaId
+					name=textareaName
+					placeholder=textareaPlaceholder
+					cols=textareaCols
+					rows=textareaRows
+					maxlength=textareaMaxLength
+					autofocus=textareaAutofocus
+					disabled=textareaDisabled
+					readonly=textareaReadonly
+					required=textareaRequired
+					class=textareaClass
+				)
+				label(for=textareaId)= textareaLabel
+		else
+			label(for=textareaId)= textareaLabel
+			textarea(
+				id=textareaId
+				name=textareaName
+				placeholder=textareaPlaceholder
+				rows=textareaRows
+				maxlength=textareaMaxLength
+				autofocus=textareaAutofocus
+				disabled=textareaDisabled
+				readonly=textareaReadonly
+				required=textareaRequired
+				class=textareaClass
+			)
+
+
+
+
+
+

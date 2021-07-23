@@ -1,0 +1,28 @@
+mixin inputFile(inputCustom, inputLabel, inputId, inputName, inputLang, inputAccept, inputAutofocus, inputRequired, inputClass)
+	.form-group
+		if inputCustom
+			if inputLabel
+				label=inputLabel
+			.custom-file
+				input(
+					type='file'
+					id=inputId
+					name=inputName
+					lang=inputLang
+					accept=inputAccept
+					autofocus=inputAutofocus
+					required=inputRequired
+					class=inputClass
+				)
+				label.custom-file__label(for=inputId)
+		else
+			label(for=inputId)= inputLabel
+			input(
+				type='file'
+				id=inputId
+				name=inputName
+				accept=inputAccept
+				autofocus=inputAutofocus
+				required=inputRequired
+				class=inputClass
+			)

@@ -1,0 +1,169 @@
+@mixin flexbox() {
+    display:  -webkit-box;
+    display:     -moz-box;
+    display:  -ms-flexbox;
+    display: -webkit-flex;
+    display:         flex;
+}
+
+@mixin inline-flexbox() {
+    display:  -webkit-inline-box;
+    display:     -moz-inline-box;
+    display:  -ms-inline-flexbox;
+    display: -webkit-inline-flex;
+    display:         inline-flex;
+}
+
+@mixin flex($columns) {
+    -webkit-box-flex: $columns;
+    -moz-box-flex: $columns;
+    box-flex: $columns;
+    -webkit-flex: $columns;
+    -moz-flex: $columns;
+    -ms-flex: $columns;
+    flex: $columns;
+}
+
+@mixin flex-direction($direction: row) {
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+
+    @if $direction == row {
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        box-orient: horizontal;
+    } @else if $direction == row-reverse {
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -moz-box-direction: reverse;
+        box-direction: reverse;
+    } @else if $direction == column {
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+    } @else if $direction == column-reverse {
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        box-orient: vertical;
+        -webkit-box-direction: reverse;
+        -moz-box-direction: reverse;
+        box-direction: reverse;
+    }
+}
+
+@mixin flex-wrap($wrap: nowrap) {
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+
+    @if $wrap == nowrap {
+        -webkit-box-lines: single;
+        -moz-box-lines: single;
+        box-lines: single;
+    } @else if $wrap == wrap {
+        -webkit-box-lines: multiple;
+        -moz-box-lines: multiple;
+        box-lines: multiple;
+    }
+}
+
+@mixin justify-content($justify: flex-start) {
+    -webkit-justify-content: $justify;
+    -moz-justify-content: $justify;
+    -ms-justify-content: $justify;
+    justify-content: $justify;
+
+    @if $justify == space-between {
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -ms-flex-pack: justify;
+    } @else if $justify == space-around {
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -ms-flex-pack: distribute;
+    }
+}
+
+@mixin flex-grow($number) {
+    -webkit-flex-grow: $number;
+    -moz-flex-grow: $number;
+    -ms-flex-grow: $number;
+    flex-grow: $number;
+}
+
+@mixin flex-shrink($number) {
+    -webkit-flex-shrink: $number;
+    -moz-flex-shrink: $number;
+    -ms-flex-shrink: $number;
+    flex-shrink: $number;
+}
+
+@mixin flex-basis($width) {
+    -webkit-flex-basis: $width;
+    -moz-flex-basis: $width;
+    -ms-flex-basis: $width;
+    flex-basis: $width;
+}
+
+@mixin align-content($align: stretch) {
+    -ms-flex-line-pack: $align;
+    -webkit-align-content: $align;
+    -moz-align-content: $align;
+    -ms-align-content: $align;
+    align-content: $align;
+
+    @if $align == space-between {
+        -ms-flex-line-pack: justify;
+    } @else if $align == space-around {
+        -ms-flex-line-pack: distribute;
+    } @else if $align == start {
+        -webkit-align-content: flex-#{$align};
+        align-content: flex-#{$align};
+    } @else if $align == end {
+        -webkit-align-content: flex-#{$align};
+        align-content: flex-#{$align};
+    }
+}
+
+@mixin align-items($align: stretch) {
+    -webkit-align-items: $align;
+    -moz-align-items: $align;
+    -ms-align-items: $align;
+    align-items: $align;
+
+    @if $align == start {
+        -webkit-align-items: flex-#{align};
+        align-items: flex-#{$align};
+    } @else if $align == end {
+        -webkit-align-items: flex-#{align};
+        align-items: flex-#{align};
+    }
+}
+
+@mixin align-self($align: stretch) {
+    -ms-flex-item-align: $align;
+    -webkit-align-self: $align;
+    align-self: $align;
+
+    @if $align == start {
+        -webkit-align-self: flex-#{$align};
+        align-self: flex-#{$align};
+    } @else if $align == end {
+        -webkit-align-self: flex-#{$align};
+        align-self: flex-#{$align};
+    }
+}
+
+@mixin order($number) {
+    -webkit-box-ordinal-group: $number;
+    -moz-box-ordinal-group: $number;
+    box-ordinal-group: $number;
+    -ms-flex-order: $number;
+    -webkit-order: $number;
+    order: $number;
+}

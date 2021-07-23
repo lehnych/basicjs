@@ -1,0 +1,22 @@
+mixin select(selectCustom, selectLabel, selectId, selectName, selectAutofocus, selectMultiple, selectSize, selectRequired, selectClass, selectSelected, selectVals)
+	.form-group
+		if selectCustom
+			- var selectClass = [selectClass, 'custom-select']
+
+		label(for=selectId)=selectLabel
+		select(
+			id=selectId
+			name=selectName
+			autofocus=selectAutofocus
+			multiple=selectMultiple
+			size=selectSize
+			required=selectRequired
+			class=selectClass
+		)
+			each val, index in selectVals
+				if index == '0' && selectMultiple == false
+					- var isDisabled = true
+				else
+					- var isDisabled = false
+				- var isSelected = (selectSelected==val) ? true : false
+				option(value= val, selected= isSelected, disabled= isDisabled)= val

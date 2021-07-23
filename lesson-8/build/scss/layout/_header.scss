@@ -1,0 +1,65 @@
+header {
+	padding: $base-spacing-xs 0;
+	background: $header-bg;
+	
+	img {
+		display: block;
+	}
+	
+	.header {
+		
+		&__wrapper {
+			@include flexbox;
+			@include align-items(center);
+			@include justify-content(space-between);
+		}
+		
+		&__col {
+			@include flexbox;
+			@include align-items(center);
+			
+			> *:not(:first-child) {
+				margin-left: $base-spacing-sm;
+			}
+			
+			[class^="icon__"],
+			[class*=" icon__"] {
+				@include transition(color 0.4s ease);
+				@include font-size(30px);
+				color: $color-white;
+				
+				&:hover {
+					color: $deco-color;
+				}
+			}
+			
+			.user {
+				@include media-breakpoint-down(ms) {
+					display: none;
+				}
+			}
+			
+			.basket {
+				@include media-breakpoint-down(ms) {
+					display: none;
+				}
+				@include position-relative;
+				
+				&__count {
+					@include flexbox;
+					@include align-items(center);
+					@include justify-content(center);
+					@include font-size($font-size-xs);
+					@include position-absolute(-9px, -9px, auto, auto);
+					width: 18px;
+					height: 18px;
+					background: $deco-color;
+					border-radius: 50%;
+					color: $color-white;
+					text-align: center;
+					z-index: 1;
+				}
+			}
+		}
+	}
+}

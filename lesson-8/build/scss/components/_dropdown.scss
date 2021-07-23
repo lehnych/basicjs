@@ -1,0 +1,57 @@
+.dropdown {
+	
+	&__header {
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(flex-strat);
+		
+		@include position-relative;
+		@include media-breakpoint-down(ms) {
+			@include font-size($font-size-xs);
+		}
+		cursor: pointer;
+		font-weight: $font-weight-regular;
+		text-transform: uppercase;
+		
+		span {
+			
+			&:first-child {
+				margin-right: $base-spacing-xs;
+			}
+		}
+	}
+	
+	&__content {
+		@include box-shadow(6px 4px 35px rgba($color-black, 0.2));
+		min-width: 100px;
+		margin-top: $base-spacing !important;
+		padding: $base-spacing-xxs;
+		background: $color-white;
+		z-index: 1;
+		
+		.form-group {
+			
+			&:last-child {
+				margin-bottom: 0;
+			}
+			
+			.custom-element {
+				
+				&.custom--checkbox,
+				&.custom--radio {
+					
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+	}
+	
+	&:not(:first-child) {
+		@include media-breakpoint-up(sm) {
+			margin-left: $base-spacing-sm;
+		}
+		margin-left: $base-spacing-ms;
+	}
+}

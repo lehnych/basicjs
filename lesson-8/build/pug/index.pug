@@ -1,0 +1,40 @@
+extends layout/base
+
+block variables
+	- var pageMetaTitle = 'Shop'
+	- var sectionIntro = true
+
+block intro
+	section.intro
+		.intro__wrapper.container
+			h1.intro__header.aos-item(data-aos='fade-left' data-aos-duration='1000' data-aos-delay='500' data-aos-easing='ease-in-out')
+				|The Brand
+				|#[span of luxerios #[span fashion]]
+			.intro__img.aos-item(data-aos='fade-right' data-aos-duration='1000' data-aos-easing='ease-in-out')
+				img(src='img/intro.png' alt='Intro')
+
+block maincontent
+	section.teaser-grid.row
+		.teaser-grid__wrapper
+			+teaserItem(false, 'for Women', '30% off',  'img/teaser/for-women.jpg', 'For Women')
+			+teaserItem(false, 'for Men', 'hot Deal',  'img/teaser/for-men.jpg', 'For Men')
+			+teaserItem(false, 'for Kids', 'new Arrivals',  'img/teaser/for-kids.jpg', 'for Kids')
+			+teaserItem(true, 'Accesories', 'Luxirous & Trendy',  'img/teaser/accesories.jpg', 'Accesories')
+
+	section.healine
+		h2
+			|Fetured Items
+		p
+			|Shop for items based on what we featured in this week
+
+	section.product-grid.mode--grid.row
+		.product-grid__wrapper
+			+productItem('Ellery X M\'O Capsule', 'product.html', 'img/product/product-m-01-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M\'O Capsule', 'product.html', 'img/product/product-w-01-thumb.jpg', 'Known for her sculptural takes on traditional tailoring.', '$52.00')
+			+productItem('Ellery X M\'O Capsule', 'product.html', 'img/product/product-m-03-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M\'O Capsule', 'product.html', 'img/product/product-m-04-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M\'O Capsule', 'product.html', 'img/product/product-w-05-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+			+productItem('Ellery X M\'O Capsule', 'product.html', 'img/product/product-w-06-thumb.jpg', 'Known for her sculptural takes on traditional tailoring, Australian arbiter of cool Kym Ellery teams up with Moda Operandi.', '$52.00')
+		.product-grid__more-products
+			a.btn.btn__primary--negative(href='catalog.html' title='Browse All Product')
+				|Browse All Product

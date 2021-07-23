@@ -1,0 +1,83 @@
+.mobile-menu-bar {
+	@include box-shadow(6px 4px 35px rgba($color-black, 0.2));
+	@include transition(all 0.8s);
+	@include position(fixed, 0, -315px, auto, auto);
+	width: 280px;
+	height: 100%;
+	background: $color-white;
+	color: $color-black;
+	overflow-y: auto;
+	z-index: 2147483644;
+	
+	&.active {
+		right: 0;
+	}
+	
+	&__header {
+		@include flexbox;
+		@include align-items(center);
+		@include justify-content(space-between);
+		padding: $base-spacing-xs;
+		font-weight: $font-weight-regular;
+		color: $color-black;
+		text-transform: uppercase;
+		
+		[class^="icon__"],
+		[class*=" icon__"] {
+			cursor: pointer;
+		}
+		
+		img {
+			cursor: pointer;
+		}
+	}
+	
+	&__content {
+		@include position(absolute, auto, auto, auto, auto);
+		width: 100%;
+		padding: $base-spacing-xs;
+		font-weight: $font-weight-regular;
+		overflow: hidden;
+		
+		> ul {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			overflow-x: hidden;
+			
+			li {
+				text-transform: uppercase;
+				
+				&.level-1 {
+					margin-bottom: $base-spacing-sm;
+					
+					> a {
+						color: $deco-color;
+						text-transform: uppercase;
+					}
+					
+					ul {
+						margin-top: $base-spacing-xs;
+						margin-left: $base-spacing-ms;
+						
+						li {
+							
+							&.level-2 {
+								margin-bottom: $base-spacing-xs;
+								
+								> a {
+									text-transform: none;
+								}
+							}
+						}
+					}
+				}
+				
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+	}
+}

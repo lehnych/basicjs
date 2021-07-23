@@ -1,0 +1,86 @@
+.filter-primary {
+	
+	&__item {
+		
+		&__header {
+			@include flexbox;
+			@include align-items(center);
+			@include justify-content(flex-strat);
+			@include position-relative;
+			padding-left: $base-spacing-xs;
+			cursor: pointer;
+			font-weight: $font-weight-regular;
+			text-transform: uppercase;
+			z-index: 2;
+			
+			span {
+				
+				&:first-child {
+					@include media-breakpoint-down(ms) {
+						display: none;
+					}
+					margin-right: $base-spacing-xs;
+				}
+			}
+			
+			&.is--active {
+				@include position-absolute(0, auto, auto, auto);
+				color: $deco-color-dark;
+			}
+		}
+		
+		&__content {
+			@include box-shadow(6px 4px 35px rgba(0, 0, 0, 0.2));
+			@include position-absolute(-15px, 15px, auto, 15px);
+			@include media-breakpoint-up(ms) {
+				@include calc(width, #{'100% / 2 - 23px'});
+			}
+			@include media-breakpoint-up(md) {
+				@include calc(width, #{'100% / 3 - '$base-spacing-sm});
+			}
+			padding: $base-spacing-xmd $base-spacing-xs $base-spacing-xs;
+			background: $color-white;
+			display: none;
+			z-index: 1;
+			
+			details {
+				
+				summary {
+					padding: $base-spacing-xxs;
+					border-left: 3px solid $deco-color-dark;
+					border-bottom: 1px solid rgba($border-color, .3);
+					cursor: pointer;
+					list-style: none;
+					font-weight: $font-weight-regular;
+					text-transform: uppercase;
+				}
+				
+				ul {
+					margin-bottom: 0;
+					padding: $base-spacing-ms $base-spacing-xs 0 $base-spacing-xs;
+					
+					li {
+						&:not(:last-child) {
+							margin-bottom: $base-spacing-ms;
+						}
+					}
+				}
+				
+				&[open] {
+					
+					summary {
+						color: $deco-color-dark;
+					}
+				}
+				
+				&:not(:last-child) {
+					margin-bottom: $base-spacing-xs;
+					
+					ul {
+						padding-bottom: $base-spacing;
+					}
+				}
+			}
+		}
+	}
+}

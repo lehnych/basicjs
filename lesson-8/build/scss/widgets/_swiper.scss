@@ -1,0 +1,59 @@
+.swiper-box {
+	
+	&:not(.no--pagination) {
+		padding-bottom: $base-spacing-md;
+	}
+	overflow: hidden;
+	
+	.swiper-container {
+		overflow: visible;
+		
+		.swiper-pagination {
+			bottom: -$base-spacing-md;
+		}
+	}
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+	@include box-shadow(0 0 5px 0 rgba(0, 0, 0, 0.2));
+	width: 40px;
+	height: 40px;
+	margin-top: -$base-spacing-md;
+	outline: none;
+	background: $color-white;
+	color: $slider-button-color;
+	
+	&::after {
+		content: '';
+	}
+	
+	&:hover {
+		color: $deco-color;
+	}
+	
+	&.swiper-button-disabled {
+		pointer-events: inherit;
+		display: none;
+	}
+}
+
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+	left: 0;
+}
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+	right: 0;
+}
+
+.swiper-pagination-bullet {
+	width: 12px;
+	height: 12px;
+	background: $slider-bullet-color;
+	opacity: 1;
+	
+	&-active {
+		background: $slider-bullet-active-color;
+	}
+}

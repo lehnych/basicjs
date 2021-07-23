@@ -1,0 +1,49 @@
+extends layout/base
+
+block variables
+	- var pageMetaTitle = 'Registration'
+	- var pageTitle = 'Registration'
+	- var sectionBreadcrumb = true
+
+block maincontent
+	section.registration
+		.registration__wrapper
+			.registration__col
+				form
+					h3
+						| Your address
+					.form-group-row.row--two-col
+						+input(true, 'text', 'First Name', 'firstName', 'firstName', 'First Name', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+						+input(true, 'text', 'Last Name', 'lastName', 'lastName', 'Last Name', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+					+input(true, 'email', 'E-mail', 'email', 'email', 'E-mail', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+					+input(true, 'tel', 'Phone', 'tel', 'tel', 'Phone', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+					.form-group-row.row--two-col
+						+input(true, 'text', 'Street', 'street', 'street', 'Street', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+						+input(true, 'number', 'House Nr.', 'houseNr', 'houseNr', 'House Nr.', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+					.form-group-row.row--two-col
+						+input(true, 'text', 'City', 'city', 'city', 'City', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+						+input(true, 'number', 'Zip', 'zip', 'zip', 'Zip', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+					+select(true, 'Country', 'country', 'country', false, false, false, false, 'form-control', false, ['Select', 'Germany', 'Russia', 'USA'])
+					+inputRadio(true, 'Male', 'genderMale', 'gender', false, true, true, 'custom-element__input')
+					+inputRadio(true, 'Female', 'genderFemale', 'gender', false, false, true, 'custom-element__input')
+					h3
+						| Login details
+					+input(true, 'password', 'Password', 'password', 'password', 'Password', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+					+input(true, 'password', 'Password confirm', 'passwordConfirm', 'passwordConfirm', 'Password confirm', false, false, false, false, false, false, false, false, false, false, true, 'form-control', false, false)
+					+button('Join now','submit', 'btn btn btn__primary', true, 'icon__long-arrow-right', 'right')
+			.registration__col
+				h2
+					|Loyalty has its perks
+				p
+					|Get in on the loyalty program where you can earn points and unlock serious perks. Starting with these as soon as you join:
+				ul.check.aos-item(data-aos='fade-left' data-aos-duration='1000' data-aos-delay='500' data-aos-easing='ease-in-out')
+					li.aos-item(data-aos='fade-left' data-aos-duration='1000' data-aos-delay='500' data-aos-easing='ease-in-out')
+						|15% off welcome offer
+					li.aos-item(data-aos='fade-left' data-aos-duration='1500' data-aos-delay='500' data-aos-easing='ease-in-out')
+						Free shipping, returns and exchanges on all orders
+					li.aos-item(data-aos='fade-left' data-aos-duration='2000' data-aos-delay='500' data-aos-easing='ease-in-out')
+						|$10 off a purchase on your birthday
+					li.aos-item(data-aos='fade-left' data-aos-duration='2500' data-aos-delay='500' data-aos-easing='ease-in-out')
+						|Early access to products
+					li.aos-item(data-aos='fade-left' data-aos-duration='3000' data-aos-delay='500' data-aos-easing='ease-in-out')
+						|Exclusive offers & rewards

@@ -1,0 +1,12 @@
+mixin inputRange(inputLabel, inputId, inputName, inputMin, inputMax, inputStep, inputClass)
+	.form-group
+		label(for=inputId)= inputLabel
+		input(
+			type='range'
+			id=inputId
+			name=inputName
+			min=inputMin
+			max=inputMax
+			step=inputStep
+			class=inputClass
+		)
